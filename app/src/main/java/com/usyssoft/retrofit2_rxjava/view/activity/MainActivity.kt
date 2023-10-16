@@ -1,4 +1,4 @@
-package com.usyssoft.retrofit2_rxjava.view
+package com.usyssoft.retrofit2_rxjava.view.activity
 
 import android.content.Context
 import androidx.appcompat.app.AppCompatActivity
@@ -7,7 +7,6 @@ import androidx.lifecycle.Observer
 import androidx.lifecycle.ViewModelProvider
 import androidx.recyclerview.widget.LinearLayoutManager
 import com.usyssoft.retrofit2_rxjava.databinding.ActivityMainBinding
-import com.usyssoft.retrofit2_rxjava.model.CarList
 import com.usyssoft.retrofit2_rxjava.view.adapter.CarAdapter
 import com.usyssoft.retrofit2_rxjava.viewModel.CarListViewModel
 
