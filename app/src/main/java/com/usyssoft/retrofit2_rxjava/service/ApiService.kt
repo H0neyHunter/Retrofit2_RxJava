@@ -13,7 +13,7 @@ class ApiService {
         .addConverterFactory(GsonConverterFactory.create())
         .addCallAdapterFactory(RxJava2CallAdapterFactory.create())
         .build()
-        .create(Api::class.java)
+        .create(EndPointsApi::class.java)
 
     fun getCarListData() : Single<List<CarList>>{
         return api.getCar()
