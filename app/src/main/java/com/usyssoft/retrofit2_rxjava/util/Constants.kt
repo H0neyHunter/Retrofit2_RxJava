@@ -1,4 +1,4 @@
-package com.usyssoft.retrofit2_rxjava.service
+package com.usyssoft.retrofit2_rxjava.util
 
 class Constants {
     companion object {

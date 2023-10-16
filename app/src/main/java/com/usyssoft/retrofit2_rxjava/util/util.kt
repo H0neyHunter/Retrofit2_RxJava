@@ -1,4 +1,4 @@
-package com.usyssoft.retrofit2_rxjava.view.util
+package com.usyssoft.retrofit2_rxjava.util
 
 import android.annotation.SuppressLint
 import android.content.Context

@@ -9,8 +9,8 @@ import android.widget.TextView
 import androidx.recyclerview.widget.RecyclerView
 import com.usyssoft.retrofit2_rxjava.R
 import com.usyssoft.retrofit2_rxjava.model.CarList
-import com.usyssoft.retrofit2_rxjava.view.util.placeHolder
-import com.usyssoft.retrofit2_rxjava.view.util.setImageGlide
+import com.usyssoft.retrofit2_rxjava.util.placeHolder
+import com.usyssoft.retrofit2_rxjava.util.setImageGlide
 
 class CarAdapter(val list: ArrayList<CarList>) : RecyclerView.Adapter<CarAdapter.d>() {
     inner class d(v: View) : RecyclerView.ViewHolder(v) {

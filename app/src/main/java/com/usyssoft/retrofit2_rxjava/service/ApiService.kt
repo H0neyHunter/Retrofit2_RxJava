@@ -1,7 +1,7 @@
 package com.usyssoft.retrofit2_rxjava.service
 
 import com.usyssoft.retrofit2_rxjava.model.CarList
-import com.usyssoft.retrofit2_rxjava.service.Constants.Companion.BASE_URL
+import com.usyssoft.retrofit2_rxjava.util.Constants.Companion.BASE_URL
 import io.reactivex.Single
 import retrofit2.Retrofit
 import retrofit2.adapter.rxjava2.RxJava2CallAdapterFactory
