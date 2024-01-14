@@ -78,4 +78,10 @@ class MainActivity : AppCompatActivity() {
         })*/
         //disposable.clear()
     }
+
+    /* //Tamamen Dinleme Kalkıcaksa bu kullanılabilir.
+    override fun onDestroy() {
+        super.onDestroy()
+        disposable.clear()
+    }*/
 }
