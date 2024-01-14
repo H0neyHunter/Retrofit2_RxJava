@@ -9,6 +9,8 @@ import androidx.recyclerview.widget.LinearLayoutManager
 import com.usyssoft.retrofit2_rxjava.databinding.ActivityMainBinding
 import com.usyssoft.retrofit2_rxjava.view.adapter.CarAdapter
 import com.usyssoft.retrofit2_rxjava.viewModel.CarListViewModel
+import io.reactivex.android.schedulers.AndroidSchedulers
+import io.reactivex.disposables.CompositeDisposable
 
 class MainActivity : AppCompatActivity() {
     private lateinit var b : ActivityMainBinding
@@ -38,8 +40,31 @@ class MainActivity : AppCompatActivity() {
         }
 
     }
-
+    private val disposable = CompositeDisposable()
     private fun liveData() {
+        val dispose1 = viewModel.carList
+            .observeOn(AndroidSchedulers.mainThread())
+            .subscribe { carList ->
+                carList?.let {
+                    adapter.updateAdapter(carList)
+                }
+            }
+
+        disposable.add(dispose1)
+        val dispose2 = viewModel.carErrorMessage
+            .observeOn(AndroidSchedulers.mainThread())
+            .subscribe { hasError ->
+                // Hata durumunda yapılacak işlemler
+            }
+        disposable.add(dispose2)
+        val dispose3 = viewModel.carLoading
+            .observeOn(AndroidSchedulers.mainThread())
+            .subscribe { isLoading ->
+                // Yükleme durumunu gösterme/gizleme işlemleri
+            }
+        disposable.add(dispose3)
+
+        /*
         viewModel.carList.observe(this@MainActivity, Observer {carlist->
             carlist?.let {
                 adapter.updateAdapter(carlist)
@@ -50,6 +75,7 @@ class MainActivity : AppCompatActivity() {
         })
         viewModel.carLoading.observe(this@MainActivity, Observer {loading->
 
-        })
+        })*/
+        //disposable.clear()
     }
 }
